@@ -5,8 +5,8 @@ import ftplib
 
 def directory_listing(ftp_connection):
   lines = []
-  ftp_connection.dir("/", lines.append)
   pwd = ftp_connection.pwd()
+  ftp_connection.dir(pwd, lines.append)
   print("[.] Content of Directory " + pwd)
   for line in lines:
     print(line)
